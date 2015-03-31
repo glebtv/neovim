@@ -786,9 +786,9 @@ static void fix_terminfo(TUIData *data)
 end:
   // Fill some empty slots with common terminal strings
   data->unibi_ext.enable_mouse = (int)unibi_add_ext_str(ut, NULL,
-      "\x1b[?1002h\x1b[?1006h");
+      "\x1b[?1002h\x1b[?1006h\x1b[?1004h");
   data->unibi_ext.disable_mouse = (int)unibi_add_ext_str(ut, NULL,
-      "\x1b[?1002l\x1b[?1006l");
+      "\x1b[?1002l\x1b[?1006l\x1b[?1004l");
   data->unibi_ext.set_rgb_foreground = (int)unibi_add_ext_str(ut, NULL,
       "\x1b[38;2;%p1%d;%p2%d;%p3%dm");
   data->unibi_ext.set_rgb_background = (int)unibi_add_ext_str(ut, NULL,
