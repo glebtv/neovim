@@ -120,6 +120,8 @@ void tui_start(void)
   // Enable bracketed paste
   unibi_out(ui, data->unibi_ext.enable_bracketed_paste);
 
+  unibi_out(ui, "\x1b[?1004h");
+
   // setup output handle in a separate event loop(we wanna do synchronous
   // write to the tty)
   data->write_loop = xmalloc(sizeof(uv_loop_t));
